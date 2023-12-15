@@ -35,7 +35,7 @@ public class SecurityConfig {
         // csrf -> csrf.csrfTokenRepository(new HttpSessionCsrfTokenRepository())
         http
                 .csrf().disable()
-                .authorizeHttpRequests(authorize -> authorize.requestMatchers("/airport").permitAll())
+                .authorizeHttpRequests(authorize -> authorize.requestMatchers("/**").permitAll())
                 .httpBasic(Customizer.withDefaults());
 
         return http.build();
