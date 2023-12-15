@@ -45,7 +45,7 @@ public class SecurityConfig {
         UserDetails admin = User.builder()
                 .username("admin")
                 .password(passwordEncoder().encode("admin"))
-                .roles("USER", "ADMIN")
+                .roles("ADMIN")
                 .build();
 
         JdbcUserDetailsManager users = new JdbcUserDetailsManager(dataSource);
