@@ -1,6 +1,7 @@
 package ca.wok.fini.airport;
 
 import jakarta.persistence.*;
+import org.springframework.security.access.prepost.PostAuthorize;
 
 @Entity
 public class Airport {

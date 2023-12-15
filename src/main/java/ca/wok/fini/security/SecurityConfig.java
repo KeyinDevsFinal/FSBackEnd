@@ -3,6 +3,7 @@ package ca.wok.fini.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -30,7 +31,12 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated()).httpBasic(Customizer.withDefaults()).csrf(Customizer.withDefaults());
+
+        http
+                .csrf().disable()
+                .authorizeHttpRequests(authorize -> authorize.requestMatchers("/airport").permitAll())
+                .httpBasic(Customizer.withDefaults());
+
         return http.build();
     }
 
