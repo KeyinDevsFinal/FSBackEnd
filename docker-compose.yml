@@ -3,6 +3,6 @@ services:
   fsbackend:
     image: rledrew/fsbackend:latest
     ports:
-      - 8080:8080
+      - 8080:80
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/AirportsAPI
+      - SPRING_DATASOURCE_URL=jdbc:mysql://airportsapi-instance-1.ct86mqg2qgf3.us-east-1.rds.amazonaws.com
