@@ -1,6 +1,8 @@
 package ca.wok.fini.gates;
 
 import jakarta.persistence.*;
+
+@Entity
 public class Gates {
     @Id
     @SequenceGenerator(name = "gates_sequence", sequenceName = "gates_sequence",allocationSize = 1,initialValue = 1)
