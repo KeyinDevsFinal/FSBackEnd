@@ -1,10 +1,10 @@
 package ca.wok.fini.airport;
 
 import jakarta.persistence.*;
+import org.springframework.security.access.prepost.PostAuthorize;
 
 @Entity
 public class Airport {
-
     @Id
     @SequenceGenerator(name = "airport_sequence", sequenceName = "airport_sequence",allocationSize = 1,initialValue = 1)
     @GeneratedValue(generator = "airport_sequence")

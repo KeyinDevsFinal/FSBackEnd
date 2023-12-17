@@ -2,6 +2,7 @@ package ca.wok.fini.aircraft;
 
 import jakarta.persistence.*;
 
+@Entity
 public class Aircraft {
     @Id
     @SequenceGenerator(name = "aircraft_sequence", sequenceName = "aircraft_sequence",allocationSize = 1,initialValue = 1)

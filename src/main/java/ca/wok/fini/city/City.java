@@ -1,6 +1,8 @@
 package ca.wok.fini.city;
 
 import jakarta.persistence.*;
+
+@Entity
 public class City {
     @Id
     @SequenceGenerator(name = "city_sequence", sequenceName = "city_sequence",allocationSize = 1,initialValue = 1)

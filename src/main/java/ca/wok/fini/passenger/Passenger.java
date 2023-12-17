@@ -1,6 +1,8 @@
 package ca.wok.fini.passenger;
 
 import jakarta.persistence.*;
+
+@Entity
 public class Passenger {
     @Id
     @SequenceGenerator(name = "passenger_sequence", sequenceName = "passenger_sequence",allocationSize = 1,initialValue = 1)
