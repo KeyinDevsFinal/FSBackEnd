@@ -1,6 +1,8 @@
 package ca.wok.fini.airline;
 
 import jakarta.persistence.*;
+
+@Entity
 public class Airline {
     @Id
     @SequenceGenerator(name = "airline_sequence", sequenceName = "airline_sequence",allocationSize = 1,initialValue = 1)
