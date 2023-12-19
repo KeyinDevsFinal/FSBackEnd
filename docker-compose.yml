@@ -5,4 +5,4 @@ services:
     ports:
       - 8080:80
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://airportsapi-instance-1.ct86mqg2qgf3.us-east-1.rds.amazonaws.com
+      - SPRING_DATASOURCE_URL=jdbc:mysql://fsdatabase-instance-1.ct86mqg2qgf3.us-east-1.rds.amazonaws.com:3306/fsdatabase
