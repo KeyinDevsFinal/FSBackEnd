@@ -12,6 +12,8 @@ public class Flight {
     @GeneratedValue(generator = "flight_sequence")
     private long id;
 
+    private String flightNumber;
+
     @OneToOne
     private Airport origin;
 
@@ -20,6 +22,14 @@ public class Flight {
 
     @OneToOne
     private Aircraft aircraft;
+
+    public String getFlightNumber() {
+        return flightNumber;
+    }
+
+    public void setFlightNumber(String flightNumber) {
+        this.flightNumber = flightNumber;
+    }
 
     public Aircraft getAircraft() {
         return aircraft;
