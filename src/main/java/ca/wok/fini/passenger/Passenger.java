@@ -1,5 +1,6 @@
 package ca.wok.fini.passenger;
 
+import ca.wok.fini.city.City;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,7 +16,8 @@ public class Passenger {
 
     private String phone;
 
-    private String hometown;
+    @OneToOne
+    private City hometown;
 
     public Long getId() {
         return id;
@@ -49,11 +51,11 @@ public class Passenger {
         this.phone = phone;
     }
 
-    public String getHometown() {
+    public City getHometown() {
         return hometown;
     }
 
-    public void setHometown(String hometown) {
+    public void setHometown(City hometown) {
         this.hometown = hometown;
     }
 }
