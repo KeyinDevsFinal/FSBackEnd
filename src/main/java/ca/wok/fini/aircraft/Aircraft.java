@@ -1,5 +1,6 @@
 package ca.wok.fini.aircraft;
 
+import ca.wok.fini.airline.Airline;
 import ca.wok.fini.airport.Airport;
 import ca.wok.fini.flight.Flight;
 import jakarta.persistence.*;
@@ -15,14 +16,19 @@ public class Aircraft {
 
     private String tailnumber;
 
-    private String airline;
-
     private String brand;
 
     private String model;
 
+    @OneToOne
+    private Airline airline;
+
     @OneToMany
     private List<Flight> flights;
+
+    public void setAirline(Airline airline) {
+        this.airline = airline;
+    }
 
     public List<Flight> getFlights() {
         return flights;
@@ -46,14 +52,6 @@ public class Aircraft {
 
     public void setTailnumber(String tailnumber) {
         this.tailnumber = tailnumber;
-    }
-
-    public String getAirline() {
-        return airline;
-    }
-
-    public void setAirline(String airline) {
-        this.airline = airline;
     }
 
     public String getBrand() {
