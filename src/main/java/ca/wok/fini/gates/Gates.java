@@ -1,5 +1,6 @@
 package ca.wok.fini.gates;
 
+import ca.wok.fini.airport.Airport;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,6 +13,17 @@ public class Gates {
     private String gateNumber;
     private String terminal;
     private boolean occupied;
+
+    @ManyToOne
+    private Airport airport;
+
+    public Airport getAirport() {
+        return airport;
+    }
+
+    public void setAirport(Airport airport) {
+        this.airport = airport;
+    }
 
     public Long getId() {
         return id;

@@ -2,7 +2,6 @@ package ca.wok.fini.flight;
 
 import ca.wok.fini.aircraft.Aircraft;
 import ca.wok.fini.airport.Airport;
-import ca.wok.fini.gates.Gates;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,17 +12,24 @@ public class Flight {
     @GeneratedValue(generator = "flight_sequence")
     private long id;
 
-    @OneToOne
-    private Airport origin;
+    private String flightNumber;
 
     @OneToOne
-    private Gates gate;
+    private Airport origin;
 
     @OneToOne
     private Airport destination;
 
     @OneToOne
     private Aircraft aircraft;
+
+    public String getFlightNumber() {
+        return flightNumber;
+    }
+
+    public void setFlightNumber(String flightNumber) {
+        this.flightNumber = flightNumber;
+    }
 
     public Aircraft getAircraft() {
         return aircraft;
