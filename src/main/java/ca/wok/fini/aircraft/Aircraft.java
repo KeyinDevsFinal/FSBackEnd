@@ -1,6 +1,10 @@
 package ca.wok.fini.aircraft;
 
+import ca.wok.fini.airport.Airport;
+import ca.wok.fini.flight.Flight;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Aircraft {
@@ -16,6 +20,17 @@ public class Aircraft {
     private String brand;
 
     private String model;
+
+    @OneToMany
+    private List<Flight> flights;
+
+    public List<Flight> getFlights() {
+        return flights;
+    }
+
+    public void setFlights(List<Flight> flights) {
+        this.flights = flights;
+    }
 
     public Long getId() {
         return id;

@@ -1,5 +1,6 @@
 package ca.wok.fini.flight;
 
+import ca.wok.fini.aircraft.Aircraft;
 import ca.wok.fini.airport.Airport;
 import jakarta.persistence.*;
 
@@ -16,6 +17,17 @@ public class Flight {
 
     @OneToOne
     private Airport destination;
+
+    @OneToOne
+    private Aircraft aircraft;
+
+    public Aircraft getAircraft() {
+        return aircraft;
+    }
+
+    public void setAircraft(Aircraft aircraft) {
+        this.aircraft = aircraft;
+    }
 
     public long getId() {
         return id;
