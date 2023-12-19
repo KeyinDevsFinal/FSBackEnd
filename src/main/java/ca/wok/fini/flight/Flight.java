@@ -2,6 +2,7 @@ package ca.wok.fini.flight;
 
 import ca.wok.fini.aircraft.Aircraft;
 import ca.wok.fini.airport.Airport;
+import ca.wok.fini.gates.Gates;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,6 +15,9 @@ public class Flight {
 
     @OneToOne
     private Airport origin;
+
+    @OneToOne
+    private Gates gate;
 
     @OneToOne
     private Airport destination;
