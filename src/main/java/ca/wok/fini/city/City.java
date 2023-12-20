@@ -9,7 +9,7 @@ public class City {
     @GeneratedValue(generator = "city_sequence")
     private Long id;
 
-    private String cityname;
+    public String cityname;
 
     private String province;
 

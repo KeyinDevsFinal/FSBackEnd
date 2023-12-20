@@ -21,7 +21,7 @@ public class Aircraft {
     private String model;
 
     @OneToOne
-    private Airline airline;
+    public Airline airline;
 
     @OneToMany
     private List<Flight> flights;
