@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@RepositoryRestResource(path = "flights", collectionResourceRel = "flights")
+@RepositoryRestResource(path = "flight", collectionResourceRel = "flight")
 public interface FlightAPI extends JpaRepository<Flight, Long> {
     public List<Flight> findByFlightNumber(@RequestParam String flightNumber);
 
