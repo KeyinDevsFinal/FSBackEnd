@@ -35,7 +35,15 @@ public class SecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests(authorize -> authorize.requestMatchers("/**").permitAll())
                 .httpBasic(Customizer.withDefaults())
-                .cors();
+                .cors(httpSecurityCorsConfigurer -> {
+                    httpSecurityCorsConfigurer.configurationSource(request -> {
+                        var cors = new org.springframework.web.cors.CorsConfiguration();
+                        cors.setAllowedOrigins(java.util.List.of("http://localhost:3000"));
+                        cors.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "DELETE"));
+                        cors.setAllowedHeaders(java.util.List.of("*"));
+                        return cors;
+                    });
+                });
 
         return http.build();
     }
