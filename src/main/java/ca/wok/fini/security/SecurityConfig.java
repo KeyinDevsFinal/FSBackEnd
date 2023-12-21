@@ -32,8 +32,8 @@ public class SecurityConfig implements WebMvcConfigurer {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        // csrf -> csrf.csrfTokenRepository(new HttpSessionCsrfTokenRepository())
         http
+                .csrf().disable()
                 .authorizeHttpRequests(authorize -> authorize.requestMatchers("/**").permitAll())
                 .httpBasic(Customizer.withDefaults())
                 .cors(httpSecurityCorsConfigurer -> {
